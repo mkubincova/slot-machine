@@ -1,4 +1,5 @@
 import React from 'react';
+import Spin from './Spin';
 
 function App() {
   const [data, setData] = React.useState({reel1:"cherry", reel2:"cherry", reel3:"cherry"});
@@ -42,31 +43,12 @@ function App() {
     setData({reel1:"cherry", reel2:"cherry", reel3:"cherry"});
   }
 
-  const reelClass = (item) => {
-    switch (item){
-      case "lemon":
-        return "reel yellow";
-      case "apple":
-        return "reel green";
-      case "cherry":
-        return "reel red";
-      case "banana":
-        return "reel yellow-dark";
-      default:
-        return "reel"
-    }
-  }
-
   return (
     <div className="App">
       <h1>Slot machine</h1>
       <h2>Coins: {coins}</h2>
       <button onClick={(coins > 0) ? handleSpin : playAgain}>{(coins > 0) ? "SPIN" : "PLAY AGAIN"}</button>
-      <div className="spin">
-        <div className={reelClass(data.reel1)}>{!data ? "Loading..." : data.reel1}</div>
-        <div className={reelClass(data.reel2)}>{!data ? "Loading..." : data.reel2}</div>
-        <div className={reelClass(data.reel3)}>{!data ? "Loading..." : data.reel3}</div>
-      </div>
+      <Spin data={data} />
     </div>
   );
 }
