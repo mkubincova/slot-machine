@@ -11,11 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 h1{
   font-family: 'Bungee',
   cursive;
@@ -37,7 +32,6 @@ button {
 button:hover {
   background: rgb(253, 78, 55);
 }
-
 
 .spin{
   display: flex;

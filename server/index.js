@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-// Have Node serve the files for our built React app
+// Have Node serve the files for the built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get("/spin", (req, res) => {
@@ -18,12 +18,14 @@ app.get("/spin", (req, res) => {
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
+    //get random array item for each reel
     let one = reel1[randomNum(0,7)];
     let two = reel2[randomNum(0,7)];
     let three = reel3[randomNum(0,7)];
     
     let spin = {reel1:one, reel2:two, reel3:three};
 
+    //send result of spin to client
     res.json(spin);
 });
 

@@ -1,4 +1,6 @@
 function Spin({data}){
+
+    //add color based on item value e.g. cherry -> .red
     const reelClass = (item) => {
         switch (item){
         case "lemon":
