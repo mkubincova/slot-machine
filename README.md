@@ -1,4 +1,4 @@
-React app with Node.js backend imitating slot machine | | | deployed at: https://slot-machine.herokuapp.com/
+React app with Node.js backend imitating slot machine
 
 ## Install dependencies
 run "npm install" in root directory<br>
